@@ -1,0 +1,11 @@
+server:
+  port:
+
+spring:
+  application:
+    name: UserService
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/appdb
+    username: appuser
+    password: apppass
