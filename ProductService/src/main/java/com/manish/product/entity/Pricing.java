@@ -10,7 +10,5 @@ import java.util.List;
 @AllArgsConstructor
 public class Pricing {
     private BigDecimal price;
-    private BigDecimal discountedPrice;
-    private String currency;
     private List<PriceHistory> history;
 }
