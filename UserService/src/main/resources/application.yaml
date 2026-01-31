@@ -6,6 +6,6 @@ spring:
     name: UserService
 
   datasource:
-    url: jdbc:postgresql://postgres:5432/appdb
+    uri: jdbc:postgresql://postgres:5432/appdb
     username: appuser
     password: apppass
