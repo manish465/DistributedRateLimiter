@@ -1,4 +1,5 @@
 package com.manish.ratelimit.core;
 
-public class RateLimiter {
+public interface RateLimiter {
+    boolean allow(String key, int limit, int windowSeconds);
 }
