@@ -7,8 +7,15 @@ spring:
   elasticsearch:
     uris: http://elasticsearch:9200
 
+  redis:
+    host: redis
+    port: 6379
+
   kafka:
     bootstrap-servers: kafka:9092
     consumer:
       group-id: product-search-group
       auto-offset-reset: earliest
+
+rate-limiter:
+  enabled: true

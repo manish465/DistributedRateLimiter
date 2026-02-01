@@ -19,6 +19,7 @@ public class ProductSearchController {
     private final ProductSearchService productSearchService;
 
     @GetMapping
+    @RateLimited(key = "users-api", limit = 5, windowSeconds = 60)
     public ResponseEntity<Page<GetProductCompactDTO>> search(@RequestParam String q, Pageable pageable) {
         return ResponseEntity.ok(productSearchService.search(q, pageable));
     }
