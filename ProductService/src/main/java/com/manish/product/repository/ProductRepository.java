@@ -1,4 +1,7 @@
 package com.manish.product.repository;
 
-public interface ProductRepository {
+import com.manish.product.entity.Product;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface ProductRepository extends MongoRepository<Product, String> {
 }

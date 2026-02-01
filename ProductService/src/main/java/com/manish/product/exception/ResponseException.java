@@ -1,4 +1,4 @@
-package com.manish.user.exception;
+package com.manish.product.exception;
 
 import com.manish.user.dto.GeneralFailResponseDTO;
 import org.jspecify.annotations.NonNull;

@@ -1,4 +1,5 @@
 version: "3.7"
+name: dirtributed_rate_limiter
 
 services:
   redis:

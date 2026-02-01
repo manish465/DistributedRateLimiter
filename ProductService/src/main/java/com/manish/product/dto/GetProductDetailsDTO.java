@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetProductDTO {
+public class GetProductDetailsDTO {
     private String id;
     private String name;
     private String description;
