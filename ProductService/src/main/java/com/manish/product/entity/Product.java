@@ -1,5 +1,6 @@
 package com.manish.product.entity;
 
+import com.manish.product.dto.GetProductCompactDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
+    public GetProductCompactDTO toProductCompact;
     @Id
     private String id;
     private String name;

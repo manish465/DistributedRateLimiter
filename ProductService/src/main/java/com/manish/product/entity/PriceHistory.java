@@ -11,6 +11,5 @@ import java.time.Instant;
 @AllArgsConstructor
 public class PriceHistory {
     private BigDecimal price;
-    @LastModifiedDate
     private Instant changedAt;
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -13,4 +14,5 @@ import java.util.List;
 public class Pricing {
     private BigDecimal price;
     private List<PriceHistory> history;
+    private Instant changedAt;
 }

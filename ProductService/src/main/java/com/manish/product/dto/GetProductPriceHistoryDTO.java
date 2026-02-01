@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetProductHistoryDTO {
+public class GetProductPriceHistoryDTO {
     private String id;
     private Pricing pricing;
 }
