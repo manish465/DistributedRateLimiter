@@ -7,6 +7,7 @@ import com.manish.product.dto.GetProductPriceHistoryDTO;
 import com.manish.product.entity.PriceHistory;
 import com.manish.product.entity.Pricing;
 import com.manish.product.entity.Product;
+import com.manish.product.event.ProductUpsertEvent;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +20,7 @@ public class ProductMapper {
         Product product = new Product();
 
         PriceHistory priceHistory = new PriceHistory(addProductDTO.getPrice(), Instant.now());
-        Pricing pricing = new Pricing(addProductDTO.getPrice(), List.of(priceHistory));
+        Pricing pricing = new Pricing(addProductDTO.getPrice(), List.of(priceHistory), Instant.now());
 
         product.setName(addProductDTO.getName());
         product.setDescription(addProductDTO.getDescription());
@@ -57,5 +58,16 @@ public class ProductMapper {
 
     public GetProductPriceHistoryDTO toProductPriceHistory(Product product) {
         return new GetProductPriceHistoryDTO(product.getId(), product.getPricing());
+    }
+
+    public ProductUpsertEvent toProductUpsertEvent(Product product) {
+        return ProductUpsertEvent.builder()
+                .productId(product.getId())
+                .name(product.getName())
+                .description(product.getDescription())
+                .tags(product.getTags())
+                .category(product.getCategory())
+                .price(product.getPricing().getPrice())
+                .build();
     }
 }

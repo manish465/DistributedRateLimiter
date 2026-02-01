@@ -1,4 +1,4 @@
-package com.manish.search.event.document;
+package com.manish.search.event;
 
 
 import lombok.AllArgsConstructor;

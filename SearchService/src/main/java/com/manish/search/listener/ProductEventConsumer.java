@@ -1,6 +1,6 @@
-package com.manish.search.event;
+package com.manish.search.listener;
 
-import com.manish.search.event.document.ProductUpsertEvent;
+import com.manish.search.event.ProductUpsertEvent;
 import com.manish.search.mapper.ProductSearchMapper;
 import com.manish.search.repository.ProductSearchRepository;
 import lombok.RequiredArgsConstructor;

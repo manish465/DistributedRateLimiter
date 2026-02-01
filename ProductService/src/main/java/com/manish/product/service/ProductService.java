@@ -10,6 +10,7 @@ import com.manish.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -21,6 +22,7 @@ import java.util.Optional;
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
     public String addProduct(AddProductDTO addProductDTO) {
         Product product;
@@ -31,6 +33,7 @@ public class ProductService {
             throw new ApplicationException("Could not add new product");
         }
 
+        kafkaTemplate.send("product-events", productMapper.toProductUpsertEvent(product));
         return "Create product with product id : " + product.getId();
     }
 

@@ -1,4 +1,4 @@
-package com.manish.product.event.documnet;
+package com.manish.product.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
