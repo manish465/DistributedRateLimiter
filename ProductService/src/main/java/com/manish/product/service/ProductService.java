@@ -10,12 +10,14 @@ import com.manish.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.Optional;
 
 @RequiredArgsConstructor
+@Service
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;

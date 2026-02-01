@@ -11,21 +11,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/api/v1/user/add")
+    @PostMapping("/add")
     public ResponseEntity<String> addUser(@RequestBody AddUserRequest addUserRequest) {
         return new ResponseEntity<>(userService.addUser(addUserRequest), HttpStatus.CREATED);
     }
 
-    @GetMapping("/api/v1/user/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable String id) {
         return new ResponseEntity<>(userService.getUser(id), HttpStatus.OK);
     }
 
-    @GetMapping("/api/v1/user")
+    @GetMapping
     public ResponseEntity<Page<User>> getUsers(Pageable pageable) {
         return new ResponseEntity<>(userService.getAllUser(pageable), HttpStatus.OK);
     }
